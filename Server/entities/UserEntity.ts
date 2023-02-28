@@ -1,27 +1,20 @@
-import BaseEntity from './BaseEntity';
+import BaseEntity from "./BaseEntity.js";
+import { getModelForClass, prop } from "@typegoose/typegoose";
+export class UserEntity extends BaseEntity {
+  @prop({ required: true })
+  public firstName: string;
 
-export default class UserEntity extends BaseEntity {
-  firstName: string;
-  lastName: string;
-  age: number;
-  email: string;
-  phoneNumber: string;
- 
-  constructor(
-     id: string,
-     createdAt: Date,
-     modifiedAt: Date,
-     firstName: string,
-     lastName: string,
-     age: number,
-     email: string,
-     phoneNumber: string
-  ) {
-    super(id, createdAt, modifiedAt);
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.email = email;
-    this.phoneNumber = phoneNumber;
-  }
-};
+  @prop({ required: true })
+  public lastName: string;
+
+  @prop({ required: true })
+  public age: number;
+
+  @prop({ required: true })
+  public email: string;
+  
+  @prop({ required: true })
+  public phoneNumber: string;
+}
+
+export const UserModel = getModelForClass(UserEntity);

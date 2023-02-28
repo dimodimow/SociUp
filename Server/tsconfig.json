@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "target": "es6",
     "module": "ES2022",
     "rootDir": "./",
     "outDir": "./build",
     "esModuleInterop": true,
     "strict": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "strictPropertyInitialization": false
   },
   "ts-node": {
     "esm": true
