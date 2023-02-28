@@ -3,7 +3,6 @@ import mongoose from "mongoose"
 import "dotenv/config";
 
 const app = express();
-
 app.use(express.json());
 
 mongoose.set("strictQuery", false);

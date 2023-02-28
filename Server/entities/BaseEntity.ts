@@ -1,11 +1,8 @@
-export default class BaseEntity {
-   id: string;
-   createdAt: Date;
-   updatedAt: Date;
+import { prop } from "@typegoose/typegoose";
 
-  constructor(id: string, createdAt: Date, updatedAt: Date) {
-    this.id = id;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
-  }
-};
+export default class BaseEntity {
+  @prop()
+  createdAt: Date;
+  @prop()
+  updatedAt: Date;
+}
