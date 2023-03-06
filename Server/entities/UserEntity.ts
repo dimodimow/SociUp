@@ -1,5 +1,5 @@
 import BaseEntity from "./BaseEntity.js";
-import { getModelForClass, prop } from "@typegoose/typegoose";
+import { prop } from "@typegoose/typegoose";
 export class UserEntity extends BaseEntity {
   @prop({ required: true })
   public firstName: string;
@@ -12,9 +12,7 @@ export class UserEntity extends BaseEntity {
 
   @prop({ required: true })
   public email: string;
-  
+
   @prop({ required: true })
   public phoneNumber: string;
 }
-
-export const UserModel = getModelForClass(UserEntity);
